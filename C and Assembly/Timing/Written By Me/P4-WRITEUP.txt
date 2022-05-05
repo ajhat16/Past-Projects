@@ -1,0 +1,264 @@
+                              ____________
+
+                               P4 WRITEUP
+                              ____________
+
+
+- Name: Alex Hatoum
+- NetID: hatou003@umn.edu
+
+Answer the questions below according to the project specification. Write
+your answers directly in this text file and submit it along with your
+code.
+
+
+PROBLEM 1: matsquare_OPTM()
+===========================
+
+  Do your timing study on csel-atlas.cselabs.umn.edu
+
+
+(A) Paste Source Code
+~~~~~~~~~~~~~~~~~~~~~
+
+  Paste a copy of your source code for the function `matsquare_OPTM()'
+
+  // optimized versions of matrix A^T*A operation
+  int matata_VER1(matrix_t mat, matrix_t ans) {
+    memset(ans.data, 0, mat.rows*mat.cols*sizeof(int)); //Initialize ans so all entries are 0
+    int k;
+    int length = mat.rows; //Length for loop unfolding
+    int limit = length - 1; //limit for loop unfolding
+
+    for (int i = 0; i < mat.rows; i++) {
+      for (int j = 0; j < mat.rows; j++) {
+        int tij = MGET(mat, j, i); //calling this here instead of in the k for loop greatly increases speed
+        for (k = 0; k < limit; k+=2) { //loop unfolded for loop
+          int mjk = MGET(mat, j, k);
+          int mjk2 = MGET(mat, j, k+1);
+          int cur = MGET(ans, i, k);
+          int cur2 = MGET(ans, i, k+1);
+          int acc = tij*mjk;
+          int acc2 = tij*mjk2;
+          int new = cur + acc;
+          int new2 = cur2 + acc2;
+          MSET(ans, i, k, new);
+          MSET(ans,i,k+1,new2);
+        }
+        for (; k < length; k++) { //for the extra cases where the loop unfolding doesnt do enough iterations
+          int tij = MGET(mat, j, i);
+          int mjk = MGET(mat, j, k);
+          int cur = MGET(ans, i, k);
+          int acc = tij*mjk;
+          int new = cur + acc;
+          MSET(ans, i, k, new);
+        }
+      }
+    }
+
+    return 0;
+  }
+
+
+(B) Timing on csel-atlas
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Paste a copy of the results of running `matsquare_benchmark' on
+  csel-atlas.cselabs.umn.edu in the space below which shows how your
+  performance optimizations improved on the baseline codes.
+
+  hatou003@csel-atlas:/home/hatou003/csci2021/Project_04/p4-code $ ./matata_benchmark 
+  ==== Matrix A^T*A Benchmark Version 1 ====
+    SIZE       BASE       OPTM  SPDUP   LOG2 FACTOR POINTS 
+     171 3.1407e-02 1.3420e-02   2.34   1.23   1.00   1.23 
+     196 4.7611e-02 2.0207e-02   2.36   1.24   1.15   1.42 
+     256 1.3692e-01 4.4701e-02   3.06   1.61   1.50   2.42 
+     320 2.4782e-01 8.6482e-02   2.87   1.52   1.87   2.84 
+     801 4.7470e+00 1.3850e+00   3.43   1.78   4.68   8.32 
+    1024 2.3334e+01 2.8585e+00   8.16   3.03   5.99  18.14 
+  RAW POINTS: 34.37
+  TOTAL POINTS: 34 / 35
+
+
+(C) Optimizations
+~~~~~~~~~~~~~~~~~
+
+  Describe in some detail the optimizations you used to speed the code
+  up.  THE CODE SHOULD CONTAIN SOME COMMENTS already to describe these
+  but in the section below, describe in English the techniques you used
+  to make the code run faster.  Format your descriptions into discrete
+  chunks such as.
+
+  Full credit solutions will have a least two optimizations and describe
+  WHY these improved performance in at least a couple sentences.
+
+        Optimization 1:
+          The first major optimization I made was making the triple for loop at multiplied the matricies
+          go through each column in the row before moving onto the next row. This is because the memory
+          is stored in that order in the cache since C is a row major programming language. By making it
+          so the code didnt need to jump around the cache as much when accessing memory, it made it run
+          much quicker.
+
+        Optimization 2:
+          The second major optimization I made was using loop unfolding. I originally tried to do four
+          unfolds at a time (I would do 4 MGETs and 4 calculations per iteration instead of one), however
+          I could not figure out what was going wrong with the calculations since I could only get the correct
+          output for the 4x4 matrix. I then went to the textbook and saw how they unfolded by doing 2 iterations
+          at a time, so I changed my code to that. I am not sure why the 2 iteration version worked and my 4
+          iteration version didnt, since they looked almost exactly the same, but I didnt complain when it
+          significantly sped up my code. This optimization sped up the code because it did not need to do as
+          many iterations, and it can do more computations at once since it uses parallel processing.
+
+        Optimization 3:
+          This optimization is a minor one, but I think it got me almost 5 points. I moved the line, int tij = MGET(tra, i, j);,
+          from the k for loop into the j for loop since it wasnt using k anyways. The function was getting called an unecessary
+          amount of times, so moving helped the performance of my code a lot.
+
+        Optimization 4:
+          This optimization was pretty major. In this optimization, I took out the beginning for loop
+          to initialize the transpose matrix, and instead just accessed the elements of the transpose without
+          actually storing the transpose. To do this, I just switched around the i and the j, in int tij = MGET(mat, j, i);,
+          and used mat instead of tra in the function. This way, no memory needed to be allocated for the transpose
+          matrix, and it got me some well needed points.
+
+        Optimization 5:
+          In this optimization, I initialized ans by using the memset() function. It took some trial and error,
+          but eventually I got it to work. My original way of initializing it was in the for loops that initialized
+          tra, but when I took those out, I had to come up with a better way. I saw this suggestion in the project
+          outline on canvas, so I googled the documentation for it in C and implemented it into my code. This made
+          the code run faster because it eliminated some uneeded MSET function calls, and didnt require its own
+          for loop to actually work.
+
+
+PROBLEM 2: Timing Search Algorithms
+===================================
+
+  Do your timing study on csel-atlas.cselabs.umn.edu. In most cases,
+  report times larger than 1e-03 seconds as times shorter than this are
+  unreliable. Run searches for more repetitions to lengthen run times.
+
+
+(A) Min Size for Algorithmic Differences
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Determine the size of input array where one starts to see a measurable
+  difference in the performance of the linear and logarithmic
+  algorithms.  Produce a timing table which includes all algorithms
+  which clearly demonstrates an uptick in the times associated with some
+  while others remain much lower.  Identify what size this appears to be
+  a occur. SHOW A TIMING TABLE to support your conclusions and ensure
+  that the times reported are larger that 1e-03.
+
+    I would say the algorithms demonstrate a significant difference at 
+    a size of 32768. In the table, we can see that the binary and tree
+    results are nearly 650 times faster than the array results, and nearly
+    4750 times faster than the linked list results. Times before it still
+    had a very large difference, but it extremely apparent in the 32768 case
+    of how much faster the binary and tree implementations are. The reason why
+    the binary and tree implementations are so much faster is because of the way
+    they walk through the sorted array/tree. They use a binary search which
+    searches in logarithmic time, whereas the array and list implementations
+    use a linear search.
+
+  LENGTH SEARCHES      array       list     binary       tree
+    8192    16384 2.5450e-01 1.3087e+00 1.1650e-03 1.0660e-03
+   16384    32768 1.0171e+00 6.3022e+00 2.5560e-03 2.2250e-03
+   32768    65536 4.0884e+00 2.9909e+01 6.0730e-03 5.1580e-03
+
+
+(B) Linear Search in List vs Array
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Determine whether the linear array and linked list search remain
+  approximately at the same performance level as size increases to large
+  data or whether one begins to become favorable over other. Determine
+  the approximate size at which this divergence becomes obvious. Discuss
+  reasons WHY this difference arises.  SHOW A TIMING TABLE to support
+  your conclusions and ensure that the times reported are larger that
+  1e-03.
+
+    I would say the difference becomes pretty noticible at a length of
+    16384, with the array implementation being around 6 times faster than
+    the list implementation. The reason for this may be because the linked
+    list implementation uses more memory than the array implementation, causing
+    more strain on the cache which could be significantly slowing it down.
+    Extra memory is being used because each element has its own node, while
+    the array version does not need to worry about nodes and extra memory.
+
+  LENGTH SEARCHES      array       list
+    2048     4096 1.5981e-02 5.0020e-02
+    4096     8192 6.3580e-02 2.1924e-01
+    8192    16384 2.5449e-01 1.4270e+00
+   16384    32768 1.0372e+00 6.5786e+00
+   32768    65536 4.1134e+00 2.7966e+01
+
+
+(C) Binary Search in Tree vs Array
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Compare the binary array search and binary tree search on small to
+  very large arrays. Determine if there is a size at which the
+  performance of these two begins to diverge. If so, describe why this
+  might be happening based on your understanding of the data structures
+  and the memory system. If not, describe why you believe there is
+  little performance difference between the two. SHOW A TIMING TABLE to
+  support your conclusions and ensure that the times reported are larger
+  that 1e-03.
+
+    There is little performance difference between these two data structures
+    because they do almost the same kind of search: they start at a middle
+    element, then eliminate half of the elements depending on if the one we
+    are searching for is bigger or smaller than the current element. This is
+    what makes both data structures logarithmic time. The only reason why
+    the tree is barely slower than the array is because the tree uses slightly
+    more memory than the array version.
+
+  LENGTH SEARCHES     binary       tree
+    8192    16384 1.1650e-03 1.0260e-03
+   16384    32768 2.5610e-03 2.2400e-03
+   32768    65536 5.5790e-03 4.7280e-03
+   65536   131072 1.2410e-02 1.4698e-02
+  131072   262144 2.8262e-02 4.0864e-02
+  262144   524288 6.5353e-02 9.4307e-02
+  524288  1048576 1.5231e-01 2.0782e-01
+ 1048576  2097152 3.4120e-01 4.7448e-01
+ 2097152  4194304 7.8950e-01 9.6917e-01
+ 4194304  8388608 1.7158e+00 2.0734e+00
+ 8388608 16777216 3.8312e+00 4.4276e+00
+16777216 33554432 8.4697e+00 9.2026e+00  
+
+
+(D) Caching Effects on Algorithms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  It is commonly believed that memory systems that feature a Cache will
+  lead to arrays performing faster than linked structures such as Linked
+  Lists and Binary Search Trees. Describe whether your timings confirm
+  or refute this belief.  Address both types of algorithms in your
+  answer:
+  - What effects does Cache have on Linear Search in arrays and lists
+    and why?
+  - What effects does Cache have on Binary Search in arrays and trees
+    and why?
+
+  Cache plays a major role on how fast a linear search is in an array
+  versus a linked list. It causes the linked list to be so much slower
+  on large amounts of elements because it has to "visit" every node
+  on a miss. This means that every node it visits takes up a new spot
+  in memory and the cache, causing more stress on the cache which
+  affects performance. However, it has little affect on binary searches
+  in arrays and trees because we are not visiting every element of those
+  structures when searching. At most, we visit log(length) amount of
+  elements/nodes, so they take up much less space on the cache.
+
+
+(E) OPTIONAL MAKEUP CREDIT
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  If you decided to make use of a table of function pointers/structs
+  which is worth makeup credit, describe your basic design for this
+  below.
+
+  ####################### YOUR ANSWER HERE #########################
+
+  ##################################################################
