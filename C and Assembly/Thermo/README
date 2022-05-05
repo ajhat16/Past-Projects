@@ -1,1 +1,2 @@
-
+input.txt is used as input for the pre-written file name "puzzlebock.c".
+The puzzlebox is meant to be played/run in the debugger, and the input file is meant to be changed in order to get through the entire puzzlebox.
