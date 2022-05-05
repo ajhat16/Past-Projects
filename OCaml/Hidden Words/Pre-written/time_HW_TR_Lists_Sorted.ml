@@ -1,0 +1,15 @@
+open Hidden_Words_TR
+open Util
+
+module HW = HiddenWords_TR_F ( ListSet.ListSetM )
+
+let word_file = "words-google-10000-sorted.txt"
+
+let () = 
+  print_endline "Tail recursive hidden-words with list based sets " ;
+  print_endline (" on \"" ^ word_file ^ "\"...");
+  let words = (UtilM.read_words word_file)
+  in
+  let answers = HW.hidden_words words
+  in
+  UtilM.print_answers answers
