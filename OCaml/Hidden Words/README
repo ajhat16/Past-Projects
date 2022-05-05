@@ -1,1 +1,4 @@
+Note: All pre-written files were written by my professor
 
+"words-google-10000" and "words-google-10000-sorted" are the options for which text files to run the hidden_words function on.
+WARNING: Certian implementations (such as list-set and BSTree depending on the file) run EXTREMELY slow
