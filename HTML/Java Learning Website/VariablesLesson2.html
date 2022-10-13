@@ -1,0 +1,65 @@
+<!--AJ Hatoum-->
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<head>
+    <link rel="stylesheet" href="LessonStyles.css">
+    <title>Learn Java</title>
+</head>
+    <div id="headerbar">
+        <div class="sidebar">
+            <a href="javascript:void(0);" onclick="open_menu()" title="Menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+        </div>
+        <scan id="headertitle">Learn Java</scan>
+        <!--Implement interactive profile picture (button)-->
+        <img id="headerprofile" src="https://cdn.nerdschalk.com/wp-content/uploads/2020/09/how-to-remove-profile-picture-on-zoom-12.png?width=500">
+    </div>
+    <div id="dropdownOptions" class="menu">
+        <a href="../homePage.html">Home</a>
+        <a href="../lessonsListPage.html">Lessons</a>
+        <a href="../Welcome page.htm">Logout</a>
+    </div>
+    <script>
+        function open_menu() {
+            document.getElementById("dropdownOptions").classList.toggle("show");
+        }
+    </script>
+    <div class="lesson">
+        <!--Lesson title here-->
+        <h1>Lesson 1: Variables</h1>
+        <div class="lessonbox">
+            <!--Lesson content here-->
+            <p>
+                <ul>
+                    <dl>
+                        <li>Naming Conventions</li>
+                        <dt>- Variable names always start with a lowercase letter.
+                              Numbers and symbols should NOT be used to start the name of a variable.
+                              Spaces are also not allowed in variable names. Variable names should be
+                              short, yet descriptive of their purpose. No two variables can have the
+                              same name. When writing multiple words in the variable name, there is
+                              what is known as snake casing, and camel casing.</dt>
+                            <dd>- Snake Casing: Names with snake casing are separated by underscores instead of spaces.</dd>
+                            <dd>- Camel Casing: Names with camel casing have no spaces or underscores. Each word in the name starts with a capital letter.</dd>
+                        <dt>- Examples:</dt>
+                            <dd>int number;</dd>
+                            <dd>int oneTwoThree; //camel casing</dd>
+                            <dd>char character;</dd>
+                            <dd>char characters_and_letters; //snake casing</dd>
+                    </dl>
+                </ul>
+            </p>
+        </div>
+    </div>
+    <div class="nextbutton">
+        <a href="VariablesLesson3.html">Next</a>
+    </div>
+    <div class="backbutton">
+        <a href="VariablesLesson1.html">Back</a>
+    </div>
+</body>
+</html>
