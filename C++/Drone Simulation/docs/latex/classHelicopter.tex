@@ -1,0 +1,520 @@
+\hypertarget{classHelicopter}{}\doxysection{Helicopter Class Reference}
+\label{classHelicopter}\index{Helicopter@{Helicopter}}
+
+
+Inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is used in the position and movement of the helicopter entities.  
+
+
+
+
+{\ttfamily \#include $<$Helicopter.\+h$>$}
+
+
+
+Inheritance diagram for Helicopter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classHelicopter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Helicopter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classHelicopter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHelicopter_af3d573458584408097fcd40587206ff8}{Helicopter}} (const Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classHelicopter}{Helicopter}} class; initializes the position, direction, and speed of the helicopter entity, as well as calculating the helicopter\textquotesingle{}s destination. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHelicopter_afee08ea55129fc344c9374d70f673708}\label{classHelicopter_afee08ea55129fc344c9374d70f673708}} 
+\mbox{\hyperlink{classHelicopter_afee08ea55129fc344c9374d70f673708}{$\sim$\+Helicopter}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classHelicopter}{Helicopter}} class; automatically deletes any allocated variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHelicopter_a8db916733a82877fa98f9223854cdd54}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the current position of the helicopter entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHelicopter_aef5fe3c3a5029d6da923f123ed308898}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the direction of the helicopter entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHelicopter_adc65020147c682911cc8f15ab6bb11d6}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the current destination that the helicopter entity is trying to reach. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classHelicopter_aea52c9baf3fee25a79eeef8e796fee88}{Get\+Details}} () const override
+\begin{DoxyCompactList}\small\item\em Used to get all details of the helicopter entity, including position, model, speed, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_affb28abfed253e3e7db218d222bd7d0a}{Set\+Details}} (Json\+Object dets)
+\begin{DoxyCompactList}\small\item\em Used to set the details of the helicopter entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_aff4570a488480c2cf70a6f96cec52d37}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em A function used to get the current speed of the helicopter entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_a07154906a792d344e0b78ed1a853f159}{Set\+Speed}} (float f)
+\begin{DoxyCompactList}\small\item\em A function used to set the speed of the helicopter entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_a2a9a8ff6c710f80b45163abc0157d393}{Get\+Original\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the original speed of the helicopter entity (the speed at the creation of the entity). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_a0a7386badb41e8f39b14095ffbfd4efd}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the new positon of the helicopter entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_a00794cb2f624ca1b3d01c5920377afaf}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the direction of the helicopter entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_a2ed1e8574f7b4d2dcf4f521008cf7286}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the new destination for the helicopter entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_ad1211b18d9db476bfa2c61afead9ffb8}{Rotate}} (double angle)
+\begin{DoxyCompactList}\small\item\em Used to rotate the helicopter entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_a40a86f3aee09c2825dfe27851072791c}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em The movement function for the helicopter entity; updates the position and moves the helicopter using the beeline strategy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_ae6b3313fe047d20e0a1f9eebdc7afc32}{Random}} (float Min, float Max)
+\begin{DoxyCompactList}\small\item\em A function to calculate the random destination that the helicopter will use. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHelicopter_a622f6b65c2f663c231386604f2cef926}\label{classHelicopter_a622f6b65c2f663c231386604f2cef926}} 
+void \mbox{\hyperlink{classHelicopter_a622f6b65c2f663c231386604f2cef926}{Set\+New\+Destination}} ()
+\begin{DoxyCompactList}\small\item\em Calls the function \mbox{\hyperlink{classHelicopter_ae6b3313fe047d20e0a1f9eebdc7afc32}{Random()}} and sets the destination according to what that function returned for the x and z axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_a0c7fe45e1fc8e13bc5b9bd5de8ea62b7}{Add\+XP}} (float f)
+\begin{DoxyCompactList}\small\item\em Adds xp for the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHelicopter_ad93e9e5fdab0601a62ab149029ee1bd3}{At\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Calls on the Get\+Goal and checks whether xp is at the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_a8f92228a80b45d2a689a636c284c5e25}{Get\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Xp of the drone. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_aa84a09f2eeecff87a8af20fa1f70e84f}{Upgrade\+Added}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the xp by the goal amount after goal is reached. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_aea9d147eb47f104fa6b8ac64419e16c8}{Get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em This function gets the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHelicopter_aba8484464e149f3d8208f39fe5c21941}{Refund\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Refunds all spent XP when the upgrades are reset. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHelicopter_a186926db090ae4420e6c29d91ddd5c8e}{Get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Gets the color of the helicopter; \char`\"{}\+None\char`\"{} by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHelicopter_ad24e0173aeed9931c561aeb33fcb8014}{Set\+Color}} (std\+::string col\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the color of the helicopter in a C\+SS style. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is used in the position and movement of the helicopter entities. 
+
+include 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHelicopter_af3d573458584408097fcd40587206ff8}\label{classHelicopter_af3d573458584408097fcd40587206ff8}} 
+\index{Helicopter@{Helicopter}!Helicopter@{Helicopter}}
+\index{Helicopter@{Helicopter}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{Helicopter()}{Helicopter()}}
+{\footnotesize\ttfamily Helicopter\+::\+Helicopter (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classHelicopter}{Helicopter}} class; initializes the position, direction, and speed of the helicopter entity, as well as calculating the helicopter\textquotesingle{}s destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & A Json\+Object\& variable containing the details mentioned in the description for the function (except for the destination). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHelicopter_a0c7fe45e1fc8e13bc5b9bd5de8ea62b7}\label{classHelicopter_a0c7fe45e1fc8e13bc5b9bd5de8ea62b7}} 
+\index{Helicopter@{Helicopter}!AddXP@{AddXP}}
+\index{AddXP@{AddXP}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{AddXP()}{AddXP()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Add\+XP (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Adds xp for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is a float that holds the multiplier for the xp. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+we return the xp as it\textquotesingle{}s updating getting more points. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa039a64163fbad28be7fb24e9a3a19ca}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_ad93e9e5fdab0601a62ab149029ee1bd3}\label{classHelicopter_ad93e9e5fdab0601a62ab149029ee1bd3}} 
+\index{Helicopter@{Helicopter}!AtGoal@{AtGoal}}
+\index{AtGoal@{AtGoal}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{AtGoal()}{AtGoal()}}
+{\footnotesize\ttfamily bool Helicopter\+::\+At\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calls on the Get\+Goal and checks whether xp is at the goal. 
+
+\begin{DoxyReturn}{Returns}
+returns true if xp is greater than or equal to goal. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aecfbf01f788146c73f1716365db2b273}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a186926db090ae4420e6c29d91ddd5c8e}\label{classHelicopter_a186926db090ae4420e6c29d91ddd5c8e}} 
+\index{Helicopter@{Helicopter}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily std\+::string Helicopter\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the color of the helicopter; \char`\"{}\+None\char`\"{} by default. 
+
+\begin{DoxyReturn}{Returns}
+The color of the helicopter. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a1326f6c0e0377a4fbde8a8c02fb6ccb3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_adc65020147c682911cc8f15ab6bb11d6}\label{classHelicopter_adc65020147c682911cc8f15ab6bb11d6}} 
+\index{Helicopter@{Helicopter}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Helicopter\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the current destination that the helicopter entity is trying to reach. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} value storing the current destination of the helicopter entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a0dcaf865938ab1fb49c8389b5e580d90}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_aea52c9baf3fee25a79eeef8e796fee88}\label{classHelicopter_aea52c9baf3fee25a79eeef8e796fee88}} 
+\index{Helicopter@{Helicopter}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Helicopter\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Used to get all details of the helicopter entity, including position, model, speed, etc. 
+
+\begin{DoxyReturn}{Returns}
+A Json\+Object value storing the details of the helicopter entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_aef5fe3c3a5029d6da923f123ed308898}\label{classHelicopter_aef5fe3c3a5029d6da923f123ed308898}} 
+\index{Helicopter@{Helicopter}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Helicopter\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the direction of the helicopter entity. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the direction of the helicopter entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_aea9d147eb47f104fa6b8ac64419e16c8}\label{classHelicopter_aea9d147eb47f104fa6b8ac64419e16c8}} 
+\index{Helicopter@{Helicopter}!GetGoal@{GetGoal}}
+\index{GetGoal@{GetGoal}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetGoal()}{GetGoal()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function gets the goal. 
+
+\begin{DoxyReturn}{Returns}
+It gives back and returns the goal for xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a671a464b316df6d3ff502bfbbcc6a3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a2a9a8ff6c710f80b45163abc0157d393}\label{classHelicopter_a2a9a8ff6c710f80b45163abc0157d393}} 
+\index{Helicopter@{Helicopter}!GetOriginalSpeed@{GetOriginalSpeed}}
+\index{GetOriginalSpeed@{GetOriginalSpeed}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetOriginalSpeed()}{GetOriginalSpeed()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Get\+Original\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the original speed of the helicopter entity (the speed at the creation of the entity). 
+
+\begin{DoxyReturn}{Returns}
+A float of the original speed of the helicopter entity (the speed at the creation of the entity). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6eabaea84cb2e238a4c9e1a1dda10601}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a8db916733a82877fa98f9223854cdd54}\label{classHelicopter_a8db916733a82877fa98f9223854cdd54}} 
+\index{Helicopter@{Helicopter}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Helicopter\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the current position of the helicopter entity. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} variable containing the helicopter\textquotesingle{}s current position. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a9bc32587aab91761fc0e718612498199}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_aff4570a488480c2cf70a6f96cec52d37}\label{classHelicopter_aff4570a488480c2cf70a6f96cec52d37}} 
+\index{Helicopter@{Helicopter}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function used to get the current speed of the helicopter entity. 
+
+\begin{DoxyReturn}{Returns}
+A float value of the current speed of the helicopter entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a8f92228a80b45d2a689a636c284c5e25}\label{classHelicopter_a8f92228a80b45d2a689a636c284c5e25}} 
+\index{Helicopter@{Helicopter}!GetXP@{GetXP}}
+\index{GetXP@{GetXP}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{GetXP()}{GetXP()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Get\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the Xp of the drone. 
+
+\begin{DoxyReturn}{Returns}
+returns the xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a97bdb29840aeb88de5fdacf2ef91037a}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_ae6b3313fe047d20e0a1f9eebdc7afc32}\label{classHelicopter_ae6b3313fe047d20e0a1f9eebdc7afc32}} 
+\index{Helicopter@{Helicopter}!Random@{Random}}
+\index{Random@{Random}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{Random()}{Random()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Random (\begin{DoxyParamCaption}\item[{float}]{Min,  }\item[{float}]{Max }\end{DoxyParamCaption})}
+
+
+
+A function to calculate the random destination that the helicopter will use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Min} & A float for the minimum value that the random number can be for the destination (either in the x or z axis). \\
+\hline
+{\em Max} & A float for the maximum value that the random number can be for the destination (either in the x or z axis). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A float value of the randomly generated number (either in the x or z axis). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHelicopter_aba8484464e149f3d8208f39fe5c21941}\label{classHelicopter_aba8484464e149f3d8208f39fe5c21941}} 
+\index{Helicopter@{Helicopter}!RefundXP@{RefundXP}}
+\index{RefundXP@{RefundXP}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{RefundXP()}{RefundXP()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Refund\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Refunds all spent XP when the upgrades are reset. 
+
+\begin{DoxyReturn}{Returns}
+The XP after the calculated refund. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a704568ce7a31b030ba4895a9f8363caf}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_ad1211b18d9db476bfa2c61afead9ffb8}\label{classHelicopter_ad1211b18d9db476bfa2c61afead9ffb8}} 
+\index{Helicopter@{Helicopter}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Rotate (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to rotate the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & A double variable used in the calculation of the rotation. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a4c109baa4179c28422623a7d3b2e9f82}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_ad24e0173aeed9931c561aeb33fcb8014}\label{classHelicopter_ad24e0173aeed9931c561aeb33fcb8014}} 
+\index{Helicopter@{Helicopter}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{std\+::string}]{col\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the color of the helicopter in a C\+SS style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+} & The new color the helicopter will be set to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a61b62fe1126f473d8ebb524c70c57a39}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a2ed1e8574f7b4d2dcf4f521008cf7286}\label{classHelicopter_a2ed1e8574f7b4d2dcf4f521008cf7286}} 
+\index{Helicopter@{Helicopter}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the new destination for the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new destination of the helicopter entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa473000823f673e9d7b89aed3cd3fc5c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_affb28abfed253e3e7db218d222bd7d0a}\label{classHelicopter_affb28abfed253e3e7db218d222bd7d0a}} 
+\index{Helicopter@{Helicopter}!SetDetails@{SetDetails}}
+\index{SetDetails@{SetDetails}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetDetails()}{SetDetails()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Set\+Details (\begin{DoxyParamCaption}\item[{Json\+Object}]{dets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the details of the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dets} & A Json\+Object\& variable storing the new details of the helicopter entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIEntity_afe061c99bab3160771f64e51218f12d1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a00794cb2f624ca1b3d01c5920377afaf}\label{classHelicopter_a00794cb2f624ca1b3d01c5920377afaf}} 
+\index{Helicopter@{Helicopter}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the direction of the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new direction of the helicopter entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a64bfaa448a929ca71693ff3e2edb9d97}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a0a7386badb41e8f39b14095ffbfd4efd}\label{classHelicopter_a0a7386badb41e8f39b14095ffbfd4efd}} 
+\index{Helicopter@{Helicopter}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the new positon of the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new position for the helicopter entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_af0475048b09dc13ed6cf8e7c7be2ae6b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a07154906a792d344e0b78ed1a853f159}\label{classHelicopter_a07154906a792d344e0b78ed1a853f159}} 
+\index{Helicopter@{Helicopter}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function used to set the speed of the helicopter entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A float value containing the new speed that the helicopter will be set to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A float value of the speed that the helicopter was set to. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aac0c09bd12eea8a8d3088d8c67e8db4b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_a40a86f3aee09c2825dfe27851072791c}\label{classHelicopter_a40a86f3aee09c2825dfe27851072791c}} 
+\index{Helicopter@{Helicopter}!Update@{Update}}
+\index{Update@{Update}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Helicopter\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The movement function for the helicopter entity; updates the position and moves the helicopter using the beeline strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Stands for \char`\"{}delta time\char`\"{}; used in the calculation of the helicopter\textquotesingle{}s next position. \\
+\hline
+{\em scheduler} & Unused in this function but it is a parameter for inheritence reasons from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a8e8588fd85c7b0d813d60686d4dc2c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHelicopter_aa84a09f2eeecff87a8af20fa1f70e84f}\label{classHelicopter_aa84a09f2eeecff87a8af20fa1f70e84f}} 
+\index{Helicopter@{Helicopter}!UpgradeAdded@{UpgradeAdded}}
+\index{UpgradeAdded@{UpgradeAdded}!Helicopter@{Helicopter}}
+\doxysubsubsection{\texorpdfstring{UpgradeAdded()}{UpgradeAdded()}}
+{\footnotesize\ttfamily float Helicopter\+::\+Upgrade\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Decrements the xp by the goal amount after goal is reached. 
+
+\begin{DoxyReturn}{Returns}
+gives back the xp subtracted from the goal. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa87c18498935e838012a271d0cb2f3d1}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Helicopter.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Helicopter.\+cc\end{DoxyCompactItemize}

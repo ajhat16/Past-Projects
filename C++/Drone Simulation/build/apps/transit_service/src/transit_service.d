@@ -82,20 +82,30 @@
  ../../dependencies/include/picojson.h \
  ../../libs/transit/include/SimulationModel.h \
  ../../libs/transit/include/IController.h \
- ../../libs/transit/include/IEntity.h ../../libs/routing/include/graph.h \
- ../../libs/routing/include/routing_strategy.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/distance_function.h \
- ../../libs/routing/include/bounding_box.h \
+ ../../libs/transit/include/IEntity.h \
+ ../../libs/transit/include/../../routing/include/graph.h \
+ ../../libs/transit/include/../../routing/include/routing_strategy.h \
+ ../../libs/transit/include/../../routing/include/graph.h \
+ ../../libs/transit/include/../../routing/include/distance_function.h \
+ ../../libs/transit/include/../../routing/include/bounding_box.h \
  ../../libs/transit/include/math/vector3.h \
  ../../libs/transit/include/util/json.h \
  ../../dependencies/include/picojson.h \
+ ../../libs/transit/include/util/../../../util/include/xutil.h \
+ ../../libs/transit/include/IUpgradeable.h \
  ../../libs/transit/include/CompositeFactory.h \
  ../../libs/transit/include/IEntityFactory.h \
  ../../libs/transit/include/Drone.h \
  ../../libs/transit/include/IStrategy.h \
+ ../../libs/routing/include/graph.h \
  ../../libs/routing/include/routing_api.h \
- ../../libs/routing/include/graph_factory.h
+ ../../libs/routing/include/graph_factory.h \
+ ../../libs/routing/include/graph.h \
+ src/../../../libs/util/include/xutil.h \
+ src/../../../libs/transit/include/Upgrade.h \
+ src/../../../libs/transit/include/IEntity.h \
+ src/../../../libs/transit/include/../../../libs/util/include/xutil.h \
+ src/../../../libs/transit/include/IUpgradeable.h
 
 ../../dependencies/include/WebServer.h:
 
@@ -265,21 +275,25 @@
 
 ../../libs/transit/include/IEntity.h:
 
-../../libs/routing/include/graph.h:
+../../libs/transit/include/../../routing/include/graph.h:
 
-../../libs/routing/include/routing_strategy.h:
+../../libs/transit/include/../../routing/include/routing_strategy.h:
 
-../../libs/routing/include/graph.h:
+../../libs/transit/include/../../routing/include/graph.h:
 
-../../libs/routing/include/distance_function.h:
+../../libs/transit/include/../../routing/include/distance_function.h:
 
-../../libs/routing/include/bounding_box.h:
+../../libs/transit/include/../../routing/include/bounding_box.h:
 
 ../../libs/transit/include/math/vector3.h:
 
 ../../libs/transit/include/util/json.h:
 
 ../../dependencies/include/picojson.h:
+
+../../libs/transit/include/util/../../../util/include/xutil.h:
+
+../../libs/transit/include/IUpgradeable.h:
 
 ../../libs/transit/include/CompositeFactory.h:
 
@@ -289,6 +303,20 @@
 
 ../../libs/transit/include/IStrategy.h:
 
+../../libs/routing/include/graph.h:
+
 ../../libs/routing/include/routing_api.h:
 
 ../../libs/routing/include/graph_factory.h:
+
+../../libs/routing/include/graph.h:
+
+src/../../../libs/util/include/xutil.h:
+
+src/../../../libs/transit/include/Upgrade.h:
+
+src/../../../libs/transit/include/IEntity.h:
+
+src/../../../libs/transit/include/../../../libs/util/include/xutil.h:
+
+src/../../../libs/transit/include/IUpgradeable.h:

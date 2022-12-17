@@ -1,0 +1,114 @@
+\hypertarget{classBeelineStrategy}{}\doxysection{Beeline\+Strategy Class Reference}
+\label{classBeelineStrategy}\index{BeelineStrategy@{BeelineStrategy}}
+
+
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the beeline that the drone will take.  
+
+
+
+
+{\ttfamily \#include $<$Beeline\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Beeline\+Strategy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classBeelineStrategy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Beeline\+Strategy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classBeelineStrategy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBeelineStrategy_a5672d5a2f179ccde216e46ca1ee2281d}{Beeline\+Strategy}} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} destination)
+\begin{DoxyCompactList}\small\item\em The constructor for the \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}} class. This constructor is used to initialize the current position of the entity as well as it\textquotesingle{}s destination. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBeelineStrategy_ab2b5b091b722359b48b91fa8aedd5dc5}\label{classBeelineStrategy_ab2b5b091b722359b48b91fa8aedd5dc5}} 
+\mbox{\hyperlink{classBeelineStrategy_ab2b5b091b722359b48b91fa8aedd5dc5}{$\sim$\+Beeline\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}} class\+: automatically deletes all allocated variables in \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBeelineStrategy_ab8d3f5b05d5e9dd06465f5fc4cd4767e}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em This function moves the entity along the path set in the constructor of \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}}. The path is a straight line (hence beeline) from the positon of the entity to the destination of the entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBeelineStrategy_a648eae389f7844f210ac267313ef6233}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Determines if the entity has completed its movement and reached its destination by checking if the magnitude between the current position and destination vectors is less that 1.\+0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the beeline that the drone will take. 
+
+include 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBeelineStrategy_a5672d5a2f179ccde216e46ca1ee2281d}\label{classBeelineStrategy_a5672d5a2f179ccde216e46ca1ee2281d}} 
+\index{BeelineStrategy@{BeelineStrategy}!BeelineStrategy@{BeelineStrategy}}
+\index{BeelineStrategy@{BeelineStrategy}!BeelineStrategy@{BeelineStrategy}}
+\doxysubsubsection{\texorpdfstring{BeelineStrategy()}{BeelineStrategy()}}
+{\footnotesize\ttfamily Beeline\+Strategy\+::\+Beeline\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{destination }\end{DoxyParamCaption})}
+
+
+
+The constructor for the \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}} class. This constructor is used to initialize the current position of the entity as well as it\textquotesingle{}s destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em positon} & Initializes a private member variable for the entity\textquotesingle{}s position to the value of this argument. \\
+\hline
+{\em destination} & Initializes a private member variable for the entity\textquotesingle{}s destination to the value of this argument. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBeelineStrategy_a648eae389f7844f210ac267313ef6233}\label{classBeelineStrategy_a648eae389f7844f210ac267313ef6233}} 
+\index{BeelineStrategy@{BeelineStrategy}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!BeelineStrategy@{BeelineStrategy}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily bool Beeline\+Strategy\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines if the entity has completed its movement and reached its destination by checking if the magnitude between the current position and destination vectors is less that 1.\+0. 
+
+\begin{DoxyReturn}{Returns}
+The result of the comparison mentioned above. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classBeelineStrategy_ab8d3f5b05d5e9dd06465f5fc4cd4767e}\label{classBeelineStrategy_ab8d3f5b05d5e9dd06465f5fc4cd4767e}} 
+\index{BeelineStrategy@{BeelineStrategy}!Move@{Move}}
+\index{Move@{Move}!BeelineStrategy@{BeelineStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Beeline\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function moves the entity along the path set in the constructor of \mbox{\hyperlink{classBeelineStrategy}{Beeline\+Strategy}}. The path is a straight line (hence beeline) from the positon of the entity to the destination of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & This variable is the entity that will be moving using the Beeline Strategy. \\
+\hline
+{\em dt} & This variable stands for \char`\"{}delta time\char`\"{} and is used in the calculation of the next positon the entity should be at. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIStrategy_aba007a50be84194e879cc3559a4af5d8}{I\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Beeline\+Strategy.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Beeline\+Strategy.\+cc\end{DoxyCompactItemize}

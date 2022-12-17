@@ -1,0 +1,10 @@
+<map id="IStrategy" name="IStrategy">
+<area shape="rect" id="node1" title="A class using the strategy design pattern to implement the movement for entities in the simulation." alt="" coords="331,5,412,32"/>
+<area shape="rect" id="node2" href="$classAstarStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classBeelineStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="140,80,267,107"/>
+<area shape="rect" id="node4" href="$classCelebrationDecorator.html" title="Inherits from the IStrategy class to implement a decorator to wrap around entities to make them celeb..." alt="" coords="291,80,452,107"/>
+<area shape="rect" id="node7" href="$classDfsStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="477,80,575,107"/>
+<area shape="rect" id="node8" href="$classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="599,80,727,107"/>
+<area shape="rect" id="node5" href="$classJumpDecorator.html" title="Inherits from the CelebrationDecorator class to create a class entities can use to jump." alt="" coords="241,155,360,181"/>
+<area shape="rect" id="node6" href="$classSpinDecorator.html" title="Inherits from the CelebrationDecorator class to create a class entities can use to spin." alt="" coords="385,155,499,181"/>
+</map>

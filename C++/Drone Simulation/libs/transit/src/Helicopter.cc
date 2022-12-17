@@ -1,13 +1,8 @@
-#define _USE_MATH_DEFINES
 #include "Helicopter.h"
+
 #include "BeelineStrategy.h"
 
-#include <cmath>
-#include <limits>
-#include <cstdlib>
-#include <time.h>
-
-Helicopter::Helicopter(JsonObject& obj) : details(obj) {
+Helicopter::Helicopter(const JsonObject &obj) : details(obj) {
   JsonArray pos(obj["position"]);
   position = {pos[0], pos[1], pos[2]};
 
@@ -16,40 +11,34 @@ Helicopter::Helicopter(JsonObject& obj) : details(obj) {
 
   speed = obj["speed"];
 
-  CalcAndSetDestination();
-
+  SetNewDestination();
 }
 
-Helicopter::~Helicopter() {
-
+void Helicopter::SetNewDestination() {
+  destination = {Random(-1400, 1500), position.y, Random(-800, 800)};
 }
 
-void Helicopter::CalcAndSetDestination() {
-  int rand_x, rand_z;
-  srand(time(0));
-  rand_x = rand() % 1500;
-  rand_x = rand_x - (rand() % 1400);
-  rand_z = rand() % 800;
-  rand_z = rand_z - (rand() % 800);
-  SetDestination(Vector3(rand_x, 400, rand_z));
-  destination_set = true;
-  
+float Helicopter::Random(float Min, float Max) {
+  return ((static_cast<float>(rand()) /
+           static_cast<float>(RAND_MAX)) * (Max - Min)) + Min;
 }
 
-void Helicopter::Update(double dt, std::vector<IEntity*> scheduler) {
-  if (!destination_set) {
-    CalcAndSetDestination();
-  }
-  
-  if (toDestination != NULL) {
-    toDestination->Move(this, dt);
-    
-    if(toDestination->IsCompleted()){
-      delete toDestination;
-      toDestination = NULL;
-      destination_set = false;
-    }  
+JsonObject Helicopter::GetDetails() const { return details; }
+
+void Helicopter::Rotate(double angle) {
+  direction.x = direction.x * std::cos(angle) - direction.z * std::sin(angle);
+  direction.z = direction.x * std::sin(angle) + direction.z * std::cos(angle);
+}
+
+void Helicopter::Update(double dt, std::vector<IEntity *> scheduler) {
+  if (strategy) {
+    if (strategy->IsCompleted()) {
+      SetNewDestination();
+      strategy = new BeelineStrategy(position, destination);
+    } else {
+      strategy->Move(this, dt);
+    }
   } else {
-      toDestination = new BeelineStrategy(position, destination);
+    strategy = new BeelineStrategy(position, destination);
   }
 }

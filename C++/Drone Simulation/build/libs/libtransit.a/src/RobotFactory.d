@@ -1,10 +1,10 @@
 ../../build/libs/libtransit.a/src/RobotFactory.o: src/RobotFactory.cc \
  include/RobotFactory.h include/IEntity.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/routing_strategy.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/distance_function.h \
- ../../libs/routing/include/bounding_box.h include/math/vector3.h \
+ include/../../routing/include/graph.h \
+ include/../../routing/include/routing_strategy.h \
+ include/../../routing/include/graph.h \
+ include/../../routing/include/distance_function.h \
+ include/../../routing/include/bounding_box.h include/math/vector3.h \
  include/util/json.h ../../dependencies/include/WebServer.h \
  ../../dependencies/include/libwebsockets.h \
  ../../dependencies/include/lws_config.h \
@@ -86,22 +86,24 @@
  ../../dependencies/include/libwebsockets/lws-settings.h \
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
- ../../dependencies/include/picojson.h include/IEntityFactory.h \
- include/Drone.h include/IStrategy.h include/Robot.h
+ ../../dependencies/include/picojson.h \
+ include/util/../../../util/include/xutil.h include/IUpgradeable.h \
+ include/IEntityFactory.h include/Drone.h include/IStrategy.h \
+ ../../libs/routing/include/graph.h include/Robot.h
 
 include/RobotFactory.h:
 
 include/IEntity.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/routing_strategy.h:
+include/../../routing/include/routing_strategy.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/distance_function.h:
+include/../../routing/include/distance_function.h:
 
-../../libs/routing/include/bounding_box.h:
+include/../../routing/include/bounding_box.h:
 
 include/math/vector3.h:
 
@@ -271,10 +273,16 @@ include/util/json.h:
 
 ../../dependencies/include/picojson.h:
 
+include/util/../../../util/include/xutil.h:
+
+include/IUpgradeable.h:
+
 include/IEntityFactory.h:
 
 include/Drone.h:
 
 include/IStrategy.h:
+
+../../libs/routing/include/graph.h:
 
 include/Robot.h:

@@ -1,0 +1,82 @@
+\hypertarget{classIStrategy}{}\doxysection{I\+Strategy Class Reference}
+\label{classIStrategy}\index{IStrategy@{IStrategy}}
+
+
+A class using the strategy design pattern to implement the movement for entities in the simulation.  
+
+
+
+
+{\ttfamily \#include $<$I\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for I\+Strategy\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIStrategy__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIStrategy_aba007a50be84194e879cc3559a4af5d8}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em Moves the entity using one of four movement strategies. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{Is\+Completed}} ()=0
+\begin{DoxyCompactList}\small\item\em Checks if the movement of an entity has completed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIStrategy_abdcb4741836a0bb72017f52752962ba2}\label{classIStrategy_abdcb4741836a0bb72017f52752962ba2}} 
+const I\+Graph $\ast$ {\bfseries graph}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class using the strategy design pattern to implement the movement for entities in the simulation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIStrategy_a13c6048efd232b696db5f35000d5b106}\label{classIStrategy_a13c6048efd232b696db5f35000d5b106}} 
+\index{IStrategy@{IStrategy}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!IStrategy@{IStrategy}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily virtual bool I\+Strategy\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the movement of an entity has completed. 
+
+\begin{DoxyReturn}{Returns}
+The result of a comparison between the entity\textquotesingle{}s current position and the destination. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}{Astar\+Strategy}}, \mbox{\hyperlink{classDfsStrategy_a30fb7b230d0244cd87de51a13a8d8c5b}{Dfs\+Strategy}}, \mbox{\hyperlink{classDijkstraStrategy_a409569a22f38028431ce25522d355ee2}{Dijkstra\+Strategy}}, \mbox{\hyperlink{classBeelineStrategy_a648eae389f7844f210ac267313ef6233}{Beeline\+Strategy}}, \mbox{\hyperlink{classCelebrationDecorator_a7ce83ef692d22773bf40e8733e20329a}{Celebration\+Decorator}}, \mbox{\hyperlink{classJumpDecorator_a94b32bed5b764df15980356aa8763abe}{Jump\+Decorator}}, and \mbox{\hyperlink{classSpinDecorator_a0887a816731d9ff8ee8161034a03c4aa}{Spin\+Decorator}}.
+
+\mbox{\Hypertarget{classIStrategy_aba007a50be84194e879cc3559a4af5d8}\label{classIStrategy_aba007a50be84194e879cc3559a4af5d8}} 
+\index{IStrategy@{IStrategy}!Move@{Move}}
+\index{Move@{Move}!IStrategy@{IStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily virtual void I\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Moves the entity using one of four movement strategies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & An I\+Entity$\ast$ object which is the entity that will be moved. \\
+\hline
+{\em dt} & Stands for \char`\"{}delta time\char`\"{}; a double variable used in the calculation of the entity\textquotesingle{}s next position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}{Astar\+Strategy}}, \mbox{\hyperlink{classDfsStrategy_aab5a0a5c97f710075634b81a3e00ecf9}{Dfs\+Strategy}}, \mbox{\hyperlink{classDijkstraStrategy_a24e0177f55b69a6b2260b0a0e2ce4430}{Dijkstra\+Strategy}}, \mbox{\hyperlink{classBeelineStrategy_ab8d3f5b05d5e9dd06465f5fc4cd4767e}{Beeline\+Strategy}}, \mbox{\hyperlink{classJumpDecorator_a6d46675428916bbe6acd10fb25d51f86}{Jump\+Decorator}}, \mbox{\hyperlink{classSpinDecorator_a766735ae467d0bb3a80169e109951804}{Spin\+Decorator}}, and \mbox{\hyperlink{classCelebrationDecorator_aaea8fd11f7d0e12dd79ccdc63ab1bbf6}{Celebration\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/I\+Strategy.\+h\end{DoxyCompactItemize}

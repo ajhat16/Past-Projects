@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="084ecf8f-755a-4340-ba63-920b9a84e62a" name="Make" defaultType="MAKE">
+      <configuration id="59b4d78b-b2d8-4558-87b1-9b87c05f0f6c" name="Make" toolchainName="WSL" />
+    </target>
+  </component>
+</project>

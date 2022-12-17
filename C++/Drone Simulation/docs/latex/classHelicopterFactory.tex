@@ -1,0 +1,70 @@
+\hypertarget{classHelicopterFactory}{}\doxysection{Helicopter\+Factory Class Reference}
+\label{classHelicopterFactory}\index{HelicopterFactory@{HelicopterFactory}}
+
+
+This class inherits from the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} class and is used in the creation of helicopter entities.  
+
+
+
+
+{\ttfamily \#include $<$Helicopter\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Helicopter\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classHelicopterFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Helicopter\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classHelicopterFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}\label{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}} 
+virtual \mbox{\hyperlink{classHelicopterFactory_ac00bcc2c2d190f5d7b199840b94588ee}{$\sim$\+Helicopter\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classHelicopterFactory}{Helicopter\+Factory}} class; automatically deletes allocated vairables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em The function that creates the helicopter entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class inherits from the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} class and is used in the creation of helicopter entities. 
+
+include 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}\label{classHelicopterFactory_ac39e8000650e45f174e10e34644c23df}} 
+\index{HelicopterFactory@{HelicopterFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!HelicopterFactory@{HelicopterFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Helicopter\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The function that creates the helicopter entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & A Json\+Object\& storing the information about the helicopter entity, namely the type, which is used to make the entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Helicopter\+Factory.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Helicopter\+Factory.\+cc\end{DoxyCompactItemize}

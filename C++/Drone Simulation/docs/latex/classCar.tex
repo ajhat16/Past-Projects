@@ -1,0 +1,520 @@
+\hypertarget{classCar}{}\doxysection{Car Class Reference}
+\label{classCar}\index{Car@{Car}}
+
+
+This class inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for creating and navigating a car entity that moves around the simulation and updates its position in real time.  
+
+
+
+
+{\ttfamily \#include $<$Car.\+h$>$}
+
+
+
+Inheritance diagram for Car\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classCar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Car\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classCar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCar_a5ebb1f9d3bb1e92d7c1927252acfa7de}{Car}} (const Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classCar}{Car}} class. Initializes certain properties of the car such as position, speed, direction, and destination. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCar_ae7bf0fd47999f3b0a7cdc944f766200c}\label{classCar_ae7bf0fd47999f3b0a7cdc944f766200c}} 
+\mbox{\hyperlink{classCar_ae7bf0fd47999f3b0a7cdc944f766200c}{$\sim$\+Car}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor for the car class\+: automatically deletes any allocated variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCar_a15bfb55a579f0a11f18fa339680baece}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em This function is used to give the position of the car entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCar_ab75977e98e1265cd6dd391dfe3203886}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em This function is used to give the direction of the car entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCar_aac2af3568b3baa238a55f9142598c24d}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em This function is used to give the destination of the car entity. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classCar_a26443b4a303c4896b8d1e8a8a97f6d11}{Get\+Details}} () const override
+\begin{DoxyCompactList}\small\item\em This function is used to give the details/properties of the car entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_adddc773c810dc76a5387eb13d7c7f3d1}{Set\+Details}} (Json\+Object dets)
+\begin{DoxyCompactList}\small\item\em This function is used to change the details/properties of the car entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a4fb5c6e642d6a70d3a9fcc1012d4e561}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em This function is used to get the current speed of the car entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a9a79371f96f549264c046ed6997cad92}{Set\+Speed}} (float f)
+\begin{DoxyCompactList}\small\item\em Sets the speed of the car entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a5314cb0419483b91c3195c64209f58f5}{Get\+Original\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em A function to get the speed that the car was at creation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_a73dfbd1e8575d4bcae8581b7abfdd99a}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the position of the car entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_ad50dda9150d3e00185be0997277e940b}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the direction of the car entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_ac3f99ecb6c9ff631414987032320446d}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the destination of the car entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_a96224a8dba9fce9eaf6d19f257849f74}{Rotate}} (double angle)
+\begin{DoxyCompactList}\small\item\em A function used to rotate the car entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_aa9dde801228bdec170224a31f4b66b34}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em The movement function for the car entity; updates the position and moves the car using the Astar strategy. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a5f19a309b16b90291740f02fc16cba62}{Random}} (float Min, float Max)
+\begin{DoxyCompactList}\small\item\em A function to calculate the random destination that the car will use. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCar_a44e9e2d9d6b87b8fe09046da6658502c}\label{classCar_a44e9e2d9d6b87b8fe09046da6658502c}} 
+void \mbox{\hyperlink{classCar_a44e9e2d9d6b87b8fe09046da6658502c}{Set\+New\+Destination}} ()
+\begin{DoxyCompactList}\small\item\em Calls the function \mbox{\hyperlink{classCar_a5f19a309b16b90291740f02fc16cba62}{Random()}} and sets the destination according to what that function returned for the x and z axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a0f0bc3999eaeb64f1027ac129e06e751}{Add\+XP}} (float f)
+\begin{DoxyCompactList}\small\item\em Adds xp for the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCar_a3a9f0e59bac97c1f18f758879bd172a3}{At\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Calls on the Get\+Goal and checks whether xp is at the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a8e128d07b2233548681395d16178c9af}{Get\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Gets the xp of the car. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_affd15e33f85e070bf04353a50537d023}{Upgrade\+Added}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the XP by the goal amount when the XP is spent on an upgrade. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a7c0e6bda3b5e1b565ddb1e86a7826694}{Get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em This function gets the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCar_a6639947307c98291552035628c6a9eed}{Refund\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Refunds all spent XP when the upgrades are reset. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCar_aac5f40679b90d67aeb59add57c11439c}{Get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Gets the color of the car; \char`\"{}\+None\char`\"{} by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCar_aa9d6d0f896906f698d9c0fae56dc322c}{Set\+Color}} (std\+::string col\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the color of the car in a C\+SS style. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for creating and navigating a car entity that moves around the simulation and updates its position in real time. 
+
+include 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCar_a5ebb1f9d3bb1e92d7c1927252acfa7de}\label{classCar_a5ebb1f9d3bb1e92d7c1927252acfa7de}} 
+\index{Car@{Car}!Car@{Car}}
+\index{Car@{Car}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{Car()}{Car()}}
+{\footnotesize\ttfamily Car\+::\+Car (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classCar}{Car}} class. Initializes certain properties of the car such as position, speed, direction, and destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & This parameter is used to initialize the properties of the car mentioned above, except for the destination. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCar_a0f0bc3999eaeb64f1027ac129e06e751}\label{classCar_a0f0bc3999eaeb64f1027ac129e06e751}} 
+\index{Car@{Car}!AddXP@{AddXP}}
+\index{AddXP@{AddXP}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{AddXP()}{AddXP()}}
+{\footnotesize\ttfamily float Car\+::\+Add\+XP (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Adds xp for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is a float that holds the multiplier for the xp. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+we return the xp as it\textquotesingle{}s updating getting more points. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa039a64163fbad28be7fb24e9a3a19ca}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a3a9f0e59bac97c1f18f758879bd172a3}\label{classCar_a3a9f0e59bac97c1f18f758879bd172a3}} 
+\index{Car@{Car}!AtGoal@{AtGoal}}
+\index{AtGoal@{AtGoal}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{AtGoal()}{AtGoal()}}
+{\footnotesize\ttfamily bool Car\+::\+At\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calls on the Get\+Goal and checks whether xp is at the goal. 
+
+\begin{DoxyReturn}{Returns}
+returns true if xp is greater than or equal to goal. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aecfbf01f788146c73f1716365db2b273}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_aac5f40679b90d67aeb59add57c11439c}\label{classCar_aac5f40679b90d67aeb59add57c11439c}} 
+\index{Car@{Car}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily std\+::string Car\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the color of the car; \char`\"{}\+None\char`\"{} by default. 
+
+\begin{DoxyReturn}{Returns}
+The color of the car. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a1326f6c0e0377a4fbde8a8c02fb6ccb3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_aac2af3568b3baa238a55f9142598c24d}\label{classCar_aac2af3568b3baa238a55f9142598c24d}} 
+\index{Car@{Car}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Car\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to give the destination of the car entity. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classVector3}{Vector3}} value of the destination of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a0dcaf865938ab1fb49c8389b5e580d90}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a26443b4a303c4896b8d1e8a8a97f6d11}\label{classCar_a26443b4a303c4896b8d1e8a8a97f6d11}} 
+\index{Car@{Car}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Car\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to give the details/properties of the car entity. 
+
+\begin{DoxyReturn}{Returns}
+The Json\+Object of the details/properties of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_ab75977e98e1265cd6dd391dfe3203886}\label{classCar_ab75977e98e1265cd6dd391dfe3203886}} 
+\index{Car@{Car}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Car\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to give the direction of the car entity. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classVector3}{Vector3}} value of the direction of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a7c0e6bda3b5e1b565ddb1e86a7826694}\label{classCar_a7c0e6bda3b5e1b565ddb1e86a7826694}} 
+\index{Car@{Car}!GetGoal@{GetGoal}}
+\index{GetGoal@{GetGoal}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetGoal()}{GetGoal()}}
+{\footnotesize\ttfamily float Car\+::\+Get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function gets the goal. 
+
+\begin{DoxyReturn}{Returns}
+It gives back and returns the goal for xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a671a464b316df6d3ff502bfbbcc6a3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a5314cb0419483b91c3195c64209f58f5}\label{classCar_a5314cb0419483b91c3195c64209f58f5}} 
+\index{Car@{Car}!GetOriginalSpeed@{GetOriginalSpeed}}
+\index{GetOriginalSpeed@{GetOriginalSpeed}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetOriginalSpeed()}{GetOriginalSpeed()}}
+{\footnotesize\ttfamily float Car\+::\+Get\+Original\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function to get the speed that the car was at creation. 
+
+\begin{DoxyReturn}{Returns}
+A float of the original speed of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6eabaea84cb2e238a4c9e1a1dda10601}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a15bfb55a579f0a11f18fa339680baece}\label{classCar_a15bfb55a579f0a11f18fa339680baece}} 
+\index{Car@{Car}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Car\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to give the position of the car entity. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classVector3}{Vector3}} value of the position of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a9bc32587aab91761fc0e718612498199}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a4fb5c6e642d6a70d3a9fcc1012d4e561}\label{classCar_a4fb5c6e642d6a70d3a9fcc1012d4e561}} 
+\index{Car@{Car}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float Car\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to get the current speed of the car entity. 
+
+\begin{DoxyReturn}{Returns}
+A float of the current speed of the car entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a8e128d07b2233548681395d16178c9af}\label{classCar_a8e128d07b2233548681395d16178c9af}} 
+\index{Car@{Car}!GetXP@{GetXP}}
+\index{GetXP@{GetXP}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{GetXP()}{GetXP()}}
+{\footnotesize\ttfamily float Car\+::\+Get\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the xp of the car. 
+
+\begin{DoxyReturn}{Returns}
+returns the xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a97bdb29840aeb88de5fdacf2ef91037a}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a5f19a309b16b90291740f02fc16cba62}\label{classCar_a5f19a309b16b90291740f02fc16cba62}} 
+\index{Car@{Car}!Random@{Random}}
+\index{Random@{Random}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{Random()}{Random()}}
+{\footnotesize\ttfamily float Car\+::\+Random (\begin{DoxyParamCaption}\item[{float}]{Min,  }\item[{float}]{Max }\end{DoxyParamCaption})}
+
+
+
+A function to calculate the random destination that the car will use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Min} & A float for the minimum value that the random number can be for the destination (either in the x or z axis). \\
+\hline
+{\em Max} & A float for the maximum value that the random number can be for the destination (either in the x or z axis). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A float value of the randomly generated number (either in the x or z axis). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCar_a6639947307c98291552035628c6a9eed}\label{classCar_a6639947307c98291552035628c6a9eed}} 
+\index{Car@{Car}!RefundXP@{RefundXP}}
+\index{RefundXP@{RefundXP}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{RefundXP()}{RefundXP()}}
+{\footnotesize\ttfamily float Car\+::\+Refund\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Refunds all spent XP when the upgrades are reset. 
+
+\begin{DoxyReturn}{Returns}
+The XP after the calculated refund. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a704568ce7a31b030ba4895a9f8363caf}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a96224a8dba9fce9eaf6d19f257849f74}\label{classCar_a96224a8dba9fce9eaf6d19f257849f74}} 
+\index{Car@{Car}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Car\+::\+Rotate (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A function used to rotate the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & A double variable of the angle used to calculate the rotation of the car. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a4c109baa4179c28422623a7d3b2e9f82}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_aa9d6d0f896906f698d9c0fae56dc322c}\label{classCar_aa9d6d0f896906f698d9c0fae56dc322c}} 
+\index{Car@{Car}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Car\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{std\+::string}]{col\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the color of the car in a C\+SS style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+} & The new color the car will be set to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a61b62fe1126f473d8ebb524c70c57a39}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_ac3f99ecb6c9ff631414987032320446d}\label{classCar_ac3f99ecb6c9ff631414987032320446d}} 
+\index{Car@{Car}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily void Car\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the destination of the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new destination that the car will use. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa473000823f673e9d7b89aed3cd3fc5c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_adddc773c810dc76a5387eb13d7c7f3d1}\label{classCar_adddc773c810dc76a5387eb13d7c7f3d1}} 
+\index{Car@{Car}!SetDetails@{SetDetails}}
+\index{SetDetails@{SetDetails}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetDetails()}{SetDetails()}}
+{\footnotesize\ttfamily void Car\+::\+Set\+Details (\begin{DoxyParamCaption}\item[{Json\+Object}]{dets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function is used to change the details/properties of the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dets} & A Json\+Object variable that should store the new details/properties of the car entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIEntity_afe061c99bab3160771f64e51218f12d1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_ad50dda9150d3e00185be0997277e940b}\label{classCar_ad50dda9150d3e00185be0997277e940b}} 
+\index{Car@{Car}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void Car\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the direction of the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new direction that the car will use. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a64bfaa448a929ca71693ff3e2edb9d97}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a73dfbd1e8575d4bcae8581b7abfdd99a}\label{classCar_a73dfbd1e8575d4bcae8581b7abfdd99a}} 
+\index{Car@{Car}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Car\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the position of the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new position that the car will use. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_af0475048b09dc13ed6cf8e7c7be2ae6b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_a9a79371f96f549264c046ed6997cad92}\label{classCar_a9a79371f96f549264c046ed6997cad92}} 
+\index{Car@{Car}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily float Car\+::\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the speed of the car entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A float containing the value that the speed will be set to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A float value of the speed that the car entity was just set to. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aac0c09bd12eea8a8d3088d8c67e8db4b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_aa9dde801228bdec170224a31f4b66b34}\label{classCar_aa9dde801228bdec170224a31f4b66b34}} 
+\index{Car@{Car}!Update@{Update}}
+\index{Update@{Update}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Car\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The movement function for the car entity; updates the position and moves the car using the Astar strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Stands for \char`\"{}delta time\char`\"{}; used in the calculation of the car\textquotesingle{}s next position. \\
+\hline
+{\em scheduler} & Unused in this function but it is a parameter for inheritence reasons from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a8e8588fd85c7b0d813d60686d4dc2c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classCar_affd15e33f85e070bf04353a50537d023}\label{classCar_affd15e33f85e070bf04353a50537d023}} 
+\index{Car@{Car}!UpgradeAdded@{UpgradeAdded}}
+\index{UpgradeAdded@{UpgradeAdded}!Car@{Car}}
+\doxysubsubsection{\texorpdfstring{UpgradeAdded()}{UpgradeAdded()}}
+{\footnotesize\ttfamily float Car\+::\+Upgrade\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Decrements the XP by the goal amount when the XP is spent on an upgrade. 
+
+\begin{DoxyReturn}{Returns}
+The new XP value after the XP has been spent. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa87c18498935e838012a271d0cb2f3d1}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Car.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Car.\+cc\end{DoxyCompactItemize}

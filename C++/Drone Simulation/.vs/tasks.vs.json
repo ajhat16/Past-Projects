@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-Team-010-38-homework04",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}

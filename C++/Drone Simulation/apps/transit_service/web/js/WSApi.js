@@ -1,6 +1,11 @@
+function isOpen(ws) {
+    // https://stackoverflow.com/questions/48472977/how-to-catch-and-deal-with-websocket-is-already-in-closing-or-closed-state-in
+    return ws.readyState === ws.OPEN
+}
+
 function WSApi(host = null) {
     var self = this;
-    var hostname = host != null ? host : location.hostname+(location.port ? ':'+location.port: '');
+    var hostname = host != null ? host : location.hostname + (location.port ? ':' + location.port : '');
     this.socket = new WebSocket("ws://" + hostname, "web_server");
     this.callbacks = {};
     this.requestId = 0;
@@ -11,7 +16,7 @@ function WSApi(host = null) {
     this.socket.onmessage = function (msg) {
         var data = JSON.parse(msg.data);
 
-        if (typeof(data) == 'number') {
+        if (typeof (data) == 'number') {
             self.id = +msg.data;
             self.connected = true;
             //console.log(self.id);
@@ -28,12 +33,12 @@ function WSApi(host = null) {
         }
     }
 
-    this.connect = new Promise(function(resolve, reject) {
-        self.socket.onopen = function() {
+    this.connect = new Promise(function (resolve, reject) {
+        self.socket.onopen = function () {
             resolve(self.socket);
         };
-        self.socket.onerror = function(err) {
-            console.log(err);
+        self.socket.onerror = function (err) {
+            console.log(`ERROR: ${err}`);
             reject(err);
         }
         self.socket.onclose = function (event) {
@@ -43,17 +48,17 @@ function WSApi(host = null) {
 
     this.connected = false;
 
-    this.connect.then(function() {
+    this.connect.then(function () {
         //self.connected = true;
     });
 }
 
-WSApi.prototype.sendPostCommand = function(cmd, data, calcVal) {
+WSApi.prototype.sendPostCommand = function (cmd, data, calcVal) {
     console.log(this.id);
     return this.sendCommand(cmd, data, calcVal, true);
 }
 
-WSApi.prototype.sendCommand = function(cmd, data, calcVal, isPost = false) {
+WSApi.prototype.sendCommand = function (cmd, data, calcVal, isPost = false) {
     let self = this;
 
     if (self.connected) {
@@ -61,26 +66,37 @@ WSApi.prototype.sendCommand = function(cmd, data, calcVal, isPost = false) {
         data.id = this.requestId;
 
         if (isPost) {
-        $.ajax({
-            type: "POST",
-            url: "/post/"+self.id,
-            //data: JSON.stringify({command: "mouseClicked", output: output}),
-            data: JSON.stringify(data),
-            success: function(res) { console.log(res); },
-            //error: function(res) { console.log(res); },
-            dataType: "json"
+            $.ajax({
+                type: "POST",
+                url: "/post/" + self.id,
+                //data: JSON.stringify({command: "mouseClicked", output: output}),
+                data: JSON.stringify(data),
+                success: function (res) {
+                    console.log(res);
+                },
+                //error: function(res) { console.log(res); },
+                dataType: "json"
             });
-        }
-        else {
+        } else {
+
+            /*
+            * Check whether socket is open before sending a request
+            * Handles exception:
+            * OBJLoader.js:75 WebSocket is already in CLOSING or CLOSED state.
+            */
+
+            if (!isOpen(this.socket)) {
+                return;
+            }
+
             this.socket.send(JSON.stringify(data));
         }
 
-        let promise = new Promise(function(resolve, reject) {
-            self.callbacks[self.requestId] = function(data) {
+        let promise = new Promise(function (resolve, reject) {
+            self.callbacks[self.requestId] = function (data) {
                 if (calcVal) {
-                    resolve(calcVal(data)); 
-                }
-                else {
+                    resolve(calcVal(data));
+                } else {
                     resolve(data);
                 }
                 delete self.callbacks[data.id];
@@ -88,13 +104,12 @@ WSApi.prototype.sendCommand = function(cmd, data, calcVal, isPost = false) {
         });
         this.requestId++;
         return promise;
-    }
-    else {
-        return new Promise(function(resolve, reject) {
-            self.connect.then(function() {
-                self.connected = true;
+    } else {
+        return new Promise(function (resolve, reject) {
+            self.connect.then(function () {
+                    self.connected = true;
                     self.sendCommand(cmd, data, calcVal).then(
-                        function(data) {
+                        function (data) {
                             resolve(data);
                         });
                 }

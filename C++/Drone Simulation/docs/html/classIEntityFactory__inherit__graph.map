@@ -1,0 +1,8 @@
+<map id="IEntityFactory" name="IEntityFactory">
+<area shape="rect" id="node1" title="A class used to create entity&#39;s using the AbstractFactory design pattern." alt="" coords="285,5,397,32"/>
+<area shape="rect" id="node2" href="$classCarFactory.html" title="This class inherits from the IEntityFactory class and is used in the creation of car entities." alt="" coords="5,80,97,107"/>
+<area shape="rect" id="node3" href="$classCompositeFactory.html" title="Inherits from the IEntityFactory class; Calls all other factories to create the entities of the simul..." alt="" coords="121,80,261,107"/>
+<area shape="rect" id="node4" href="$classDroneFactory.html" title="Inherits from the IEntityFactory class and is used in correspondence with the CompositeFactory class ..." alt="" coords="286,80,395,107"/>
+<area shape="rect" id="node5" href="$classHelicopterFactory.html" title="This class inherits from the IEntityFactory class and is used in the creation of helicopter entities." alt="" coords="420,80,557,107"/>
+<area shape="rect" id="node6" href="$classRobotFactory.html" title="Inherits from the IEntityFactory class and is used in correspondence with the CompositeFactory class ..." alt="" coords="581,80,689,107"/>
+</map>

@@ -1,83 +1,148 @@
 <html>
 
 <head>
-	<title>3081 Project</title>
-	<style>
-		body {
-			margin: 0;
-		}
+    <title>3081 Project</title>
+    <style>
+        body {
+            margin: 0;
+        }
 
-		canvas {
-			display: block;
-		}
+        canvas {
+            display: block;
+        }
 
-		#info {
-			position: absolute;
-			top: 10px;
-			width: 100%;
-			text-align: center;
-			color: white;
-			z-index: 101;
-			display: block;
-		}
+        #info {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            z-index: 101;
+            display: block;
+        }
 
-		#menu {
-			background-color: black;
-			opacity: 0.8;
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			text-align: left;
-			color: white;
-			z-index: 100;
-			display: block;
-			padding: 10px;
-		}
+        #menu {
+            background-color: black;
+            opacity: 0.8;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: left;
+            color: white;
+            z-index: 100;
+            display: block;
+            padding: 10px;
+        }
 
-		#scene-container {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-		}
+        #menu-upgrade {
+            background-color: black;
+            opacity: 0.8;
+            position: absolute;
+            top: 200px;
+            right: 10px;
+            text-align: left;
+            color: white;
+            z-index: 100;
+            display: block;
+            padding: 10px;
+        }
 
-		#notification-bar {
-			position: absolute;
-			z-index: 2;
-			opacity: 0.5;
-			left: 0;
-			height: 100%;
-			background-color: black;
-			width: 300px;
-			color: white;
-			font-size: 1em;
-			white-space: pre-line;
-			padding-left: 15px;
-			padding-top: 15px;
-		}
-	</style>
+        #sm-upgrades {
+        }
+        #sm-speed{
+        }
+        #sm-models{
+        }
+        #upgrSpeed{
+        }
 
-	<script src="js/jquery-3.5.1.min.js"></script>
-	<script src="js/three.js"></script>
-	<script src="js/OrbitControls.js"></script>
-	<script src="js/GLTFLoader.js"></script>
-	<script src="js/OBJLoader.js"></script>
-	<script src="js/WSApi.js"></script>
+        #scene-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #notification-bar {
+            position: absolute;
+            z-index: 2;
+            opacity: 0.5;
+            left: 0;
+            height: 100%;
+            background-color: black;
+            width: 300px;
+            color: white;
+            font-size: 1em;
+            white-space: pre-line;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+
+
+    </style>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/WSApi.js"></script>
 </head>
 
 <body>
-	<div id="notification-bar"></div>
-	<div id="menu">
-		<div>Change View:<br> <select id="entitySelect" onchange='changeView()'>
-				<option value="-1">Select entity...</option>
-			</select></div>
-		<div><br>Simulation Speed:<br> <input type="range" min="1" max="100" value="10" class="slider" id="simSpeed">
-		</div>
-		<div><br><input type="checkbox" onclick='toggleRoutes()'> Show All Routes
-		</div>
-	</div>
-	<div id="scene-container"></div>
-	<!-- Include the "main" graphics script and run it. -->
-	<script src="js/main.js"></script>
+<div id="notification-bar"></div>
+<div id="menu">
+    <div>Change View:<br> <select id="entitySelect" onchange='changeView()'>
+        <option value="-1">Select entity...</option>
+    </select></div>
+    <div><br>Simulation Speed:<br> <input type="range" min="1" max="100" value="10" class="slider" id="simSpeed">
+    </div>
+    <div><br><input type="checkbox" onclick='toggleRoutes()'> Show All Routes
+
+    </div>
+
+</div>
+
+<div id="menu-upgrade">
+
+    <div id="sm-speed" hidden>
+
+        <br>Speed: <label id="lblSpeed" for="upgrSpeed"></label><br>
+
+        <input type="range" min="0.0" max="100" value="0" class="slider" id="upgrSpeed" onchange="changeSpeed()">
+        <br>
+
+    </div>
+    <div id="sm-upgrades">Upgrade:<br>
+        <select id="upgradeSelect" onchange='selectUpgrade()'>
+            <option value="-1">Select upgrade...</option>
+            <option value="1">Speed</option>
+            <option value="2">Color</option>
+        </select>
+    </div>
+
+    <div id="sm-colors" hidden>Colors:<br>
+        <select id="colorSelect" onchange='selectColor()'>
+            <option value="-1">Select color...</option>
+            <option value="1">Black</option>
+            <option value="2">Red</option>
+            <option value="3">Orange</option>
+            <option value="4">Yellow</option>
+            <option value="5">Green</option>
+            <option value="6">Blue</option>
+            <option value="7">Purple</option>
+        </select>
+    </div>
+    <br>XP: <label id="lblXP"></label><br>
+
+    <div><input type="button" style="margin-top: 10px;" value="Add Upgrade" onclick="addUpgrade()"></div>
+    <div><input type="button" style="margin-top: 10px;" value="Reset Upgrade" onclick="resetUpgrade()"></div>
+</div>
+
+<div id="scene-container"></div>
+
+<!-- Include the "main" graphics script and run it. -->
+<script src="js/main.js"></script>
+
 </body>
 
 </html>

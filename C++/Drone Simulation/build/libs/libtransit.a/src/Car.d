@@ -1,9 +1,9 @@
 ../../build/libs/libtransit.a/src/Car.o: src/Car.cc include/Car.h \
- include/IEntity.h ../../libs/routing/include/graph.h \
- ../../libs/routing/include/routing_strategy.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/distance_function.h \
- ../../libs/routing/include/bounding_box.h include/math/vector3.h \
+ include/IEntity.h include/../../routing/include/graph.h \
+ include/../../routing/include/routing_strategy.h \
+ include/../../routing/include/graph.h \
+ include/../../routing/include/distance_function.h \
+ include/../../routing/include/bounding_box.h include/math/vector3.h \
  include/util/json.h ../../dependencies/include/WebServer.h \
  ../../dependencies/include/libwebsockets.h \
  ../../dependencies/include/lws_config.h \
@@ -85,22 +85,24 @@
  ../../dependencies/include/libwebsockets/lws-settings.h \
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
- ../../dependencies/include/picojson.h include/IStrategy.h \
+ ../../dependencies/include/picojson.h \
+ include/util/../../../util/include/xutil.h include/IUpgradeable.h \
+ include/IStrategy.h ../../libs/routing/include/graph.h \
  include/AstarStrategy.h
 
 include/Car.h:
 
 include/IEntity.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/routing_strategy.h:
+include/../../routing/include/routing_strategy.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/distance_function.h:
+include/../../routing/include/distance_function.h:
 
-../../libs/routing/include/bounding_box.h:
+include/../../routing/include/bounding_box.h:
 
 include/math/vector3.h:
 
@@ -270,6 +272,12 @@ include/util/json.h:
 
 ../../dependencies/include/picojson.h:
 
+include/util/../../../util/include/xutil.h:
+
+include/IUpgradeable.h:
+
 include/IStrategy.h:
+
+../../libs/routing/include/graph.h:
 
 include/AstarStrategy.h:

@@ -1,0 +1,586 @@
+\hypertarget{classDrone}{}\doxysection{Drone Class Reference}
+\label{classDrone}\index{Drone@{Drone}}
+
+
+This class inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for moving the physical drone entity around the simulation.  
+
+
+
+
+{\ttfamily \#include $<$Drone.\+h$>$}
+
+
+
+Inheritance diagram for Drone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classDrone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drone\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{classDrone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrone_ab964a58e0bac4bbe991957df52718a32}{Drone}} (const Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classDrone}{Drone}} class; initializes the drone\textquotesingle{}s position, direction, and speed as well as setting its availability to true so it may pickup robots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDrone_a667075abb1eb5c54be6418884a387d14}\label{classDrone_a667075abb1eb5c54be6418884a387d14}} 
+\mbox{\hyperlink{classDrone_a667075abb1eb5c54be6418884a387d14}{$\sim$\+Drone}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDrone}{Drone}} class; automatically deletes any allocated variables. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_a33d05f853306e480ab97049eb6408ef7}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em A function used to get the current speed of the drone entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_a91aaa585d33dfe866769005aff3fdf60}{Set\+Speed}} (float f)
+\begin{DoxyCompactList}\small\item\em A function used to set the speed of the drone entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_af25189a6048fc69fa42dc2bac938e0d7}{Get\+Original\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the original speed of the drone entity (the speed at the creation of the entity). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classDrone_a3d86b956f8722735b1d7e791dea703bc}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the current position of the drone entity on the map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classDrone_aaf51e8007322a36d481ce9a546099e44}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the current direction of the drone entity on the map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classDrone_adaf61822f659e8ab22fb633569288752}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the current destination that the drone entity is trying to reach. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classDrone_aa038e4cb9540e6a4101ea70f311c8308}{Get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Used to get all details of the drone entity, including position, model, speed, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a165e0cfa18527eaef136ac60524199bd}{Set\+Details}} (Json\+Object dets)
+\begin{DoxyCompactList}\small\item\em Used to set the details of the drone entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDrone_a479442805072af27a7ee628ed59d621e}{Get\+Availability}} () const
+\begin{DoxyCompactList}\small\item\em Used to get the drone\textquotesingle{}s current availability in the simulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a21d9dc799ee8a6c10b579fcab401bd57}{Get\+Nearest\+Entity}} (std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Loops through all robots in the simulation to determine which one is the closest to the drone\textquotesingle{}s current position. It also determines the movement pattern the drone will use based on the user\textquotesingle{}s choice in the scheduler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a6798b0bd297ca7a930016cd2dda0b7ff}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Updates the drone\textquotesingle{}s current position by first beelining to the robot, then using the movement pattern determined in the \mbox{\hyperlink{classDrone_a21d9dc799ee8a6c10b579fcab401bd57}{Get\+Nearest\+Entity()}} function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a00150938e8dbfceaf81c9fb59994f6ef}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the new positon of the drone entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a102651f93957b1dbe8199cbd30a9e26f}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the direction of the drone entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a2dfb158a784d354d13740a40151fb312}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\begin{DoxyCompactList}\small\item\em Used to set the new destination for the drone entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_ad698b0fac61fecdd01dffea6762a3710}{Rotate}} (double angle)
+\begin{DoxyCompactList}\small\item\em Used to rotate the drone entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a1559fe24a5792ac72ba9d8a4a13a9ec8}{Jump}} (double height)
+\begin{DoxyCompactList}\small\item\em Used to make the drone entity jump. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_ac99234480f05958a89c91aa2e66b517b}{Add\+XP}} (float f)
+\begin{DoxyCompactList}\small\item\em Adds xp for the user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDrone_a32c050933e6844416686f9dec052a73a}{At\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em Calls on the Get\+Goal and checks whether xp is at the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_a91bc6556b0447c8f92b2e173e6155838}{Get\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Gets the Xp of the drone. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_a3871e3b514181daa0500fabe0c88b745}{Upgrade\+Added}} ()
+\begin{DoxyCompactList}\small\item\em Decrements the xp by the goal amount after goal is reached. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_af3c3b71c9d0afa65ffaba3851d98eedb}{Get\+Goal}} ()
+\begin{DoxyCompactList}\small\item\em This function gets the goal. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classDrone_a0e58e47f7e48f45def8ba3297c46d9be}{Refund\+XP}} ()
+\begin{DoxyCompactList}\small\item\em Refunds all spent XP when the upgrades are reset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDrone_af60150a86c9fbe79ef1995e9b401b46b}{Drone}} (const \mbox{\hyperlink{classDrone}{Drone}} \&drone)=delete
+\begin{DoxyCompactList}\small\item\em A copy constructor for the \mbox{\hyperlink{classDrone}{Drone}} class; Being deleted so the drone cannot be copied. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDrone}{Drone}} \& \mbox{\hyperlink{classDrone_a2226fed35df96c5a802a0c4f44cc2354}{operator=}} (const \mbox{\hyperlink{classDrone}{Drone}} \&drone)=delete
+\begin{DoxyCompactList}\small\item\em An override of the = operator; Being deleted so the drone cannot be copied. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDrone_ace7c738c4ddf22cd4daa5584bc322e71}{Get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Gets the color of the drone; \char`\"{}\+None\char`\"{} by default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDrone_a779efec4ba4b8b90635656c0a4c313f9}{Set\+Color}} (std\+::string col\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the color of the drone in a C\+SS style. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class inherits from the \mbox{\hyperlink{classIEntity}{I\+Entity}} class and is responsible for moving the physical drone entity around the simulation. 
+
+include 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrone_ab964a58e0bac4bbe991957df52718a32}\label{classDrone_ab964a58e0bac4bbe991957df52718a32}} 
+\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Drone\+::\+Drone (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classDrone}{Drone}} class; initializes the drone\textquotesingle{}s position, direction, and speed as well as setting its availability to true so it may pickup robots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & A Json\+Object\& variable storing the information listed in the description for the function. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrone_af60150a86c9fbe79ef1995e9b401b46b}\label{classDrone_af60150a86c9fbe79ef1995e9b401b46b}} 
+\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Drone\+::\+Drone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDrone}{Drone}} \&}]{drone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+A copy constructor for the \mbox{\hyperlink{classDrone}{Drone}} class; Being deleted so the drone cannot be copied. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drone} & The drone that would have been copied had the function not been deleted. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrone_ac99234480f05958a89c91aa2e66b517b}\label{classDrone_ac99234480f05958a89c91aa2e66b517b}} 
+\index{Drone@{Drone}!AddXP@{AddXP}}
+\index{AddXP@{AddXP}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{AddXP()}{AddXP()}}
+{\footnotesize\ttfamily float Drone\+::\+Add\+XP (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Adds xp for the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The multiplier for the xp. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+we return the xp as it\textquotesingle{}s updating getting more points. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa039a64163fbad28be7fb24e9a3a19ca}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a32c050933e6844416686f9dec052a73a}\label{classDrone_a32c050933e6844416686f9dec052a73a}} 
+\index{Drone@{Drone}!AtGoal@{AtGoal}}
+\index{AtGoal@{AtGoal}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{AtGoal()}{AtGoal()}}
+{\footnotesize\ttfamily bool Drone\+::\+At\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calls on the Get\+Goal and checks whether xp is at the goal. 
+
+\begin{DoxyReturn}{Returns}
+returns true if xp is greater than or equal to goal. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aecfbf01f788146c73f1716365db2b273}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a479442805072af27a7ee628ed59d621e}\label{classDrone_a479442805072af27a7ee628ed59d621e}} 
+\index{Drone@{Drone}!GetAvailability@{GetAvailability}}
+\index{GetAvailability@{GetAvailability}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetAvailability()}{GetAvailability()}}
+{\footnotesize\ttfamily bool Drone\+::\+Get\+Availability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the drone\textquotesingle{}s current availability in the simulation. 
+
+\begin{DoxyReturn}{Returns}
+A bool of the drone\textquotesingle{}s availability (true if available). 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a90348881691a37d5c3d63265ed3463b1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_ace7c738c4ddf22cd4daa5584bc322e71}\label{classDrone_ace7c738c4ddf22cd4daa5584bc322e71}} 
+\index{Drone@{Drone}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily std\+::string Drone\+::\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the color of the drone; \char`\"{}\+None\char`\"{} by default. 
+
+\begin{DoxyReturn}{Returns}
+The color of the drone. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a1326f6c0e0377a4fbde8a8c02fb6ccb3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_adaf61822f659e8ab22fb633569288752}\label{classDrone_adaf61822f659e8ab22fb633569288752}} 
+\index{Drone@{Drone}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Drone\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the current destination that the drone entity is trying to reach. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} value storing the current destination of the drone entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a0dcaf865938ab1fb49c8389b5e580d90}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_aa038e4cb9540e6a4101ea70f311c8308}\label{classDrone_aa038e4cb9540e6a4101ea70f311c8308}} 
+\index{Drone@{Drone}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Drone\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get all details of the drone entity, including position, model, speed, etc. 
+
+\begin{DoxyReturn}{Returns}
+A Json\+Object value storing the details of the drone entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_aaf51e8007322a36d481ce9a546099e44}\label{classDrone_aaf51e8007322a36d481ce9a546099e44}} 
+\index{Drone@{Drone}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Drone\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the current direction of the drone entity on the map. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} value of the current direction of the drone entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_af3c3b71c9d0afa65ffaba3851d98eedb}\label{classDrone_af3c3b71c9d0afa65ffaba3851d98eedb}} 
+\index{Drone@{Drone}!GetGoal@{GetGoal}}
+\index{GetGoal@{GetGoal}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetGoal()}{GetGoal()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This function gets the goal. 
+
+\begin{DoxyReturn}{Returns}
+It gives back and returns the goal for xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a671a464b316df6d3ff502bfbbcc6a3}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a21d9dc799ee8a6c10b579fcab401bd57}\label{classDrone_a21d9dc799ee8a6c10b579fcab401bd57}} 
+\index{Drone@{Drone}!GetNearestEntity@{GetNearestEntity}}
+\index{GetNearestEntity@{GetNearestEntity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetNearestEntity()}{GetNearestEntity()}}
+{\footnotesize\ttfamily void Drone\+::\+Get\+Nearest\+Entity (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})}
+
+
+
+Loops through all robots in the simulation to determine which one is the closest to the drone\textquotesingle{}s current position. It also determines the movement pattern the drone will use based on the user\textquotesingle{}s choice in the scheduler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scheduler} & An I\+Entity$\ast$ vector containing all robot entities of the simulation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrone_af25189a6048fc69fa42dc2bac938e0d7}\label{classDrone_af25189a6048fc69fa42dc2bac938e0d7}} 
+\index{Drone@{Drone}!GetOriginalSpeed@{GetOriginalSpeed}}
+\index{GetOriginalSpeed@{GetOriginalSpeed}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetOriginalSpeed()}{GetOriginalSpeed()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+Original\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the original speed of the drone entity (the speed at the creation of the entity). 
+
+\begin{DoxyReturn}{Returns}
+A float of the original speed of the drone entity (the speed at the creation of the entity). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6eabaea84cb2e238a4c9e1a1dda10601}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a3d86b956f8722735b1d7e791dea703bc}\label{classDrone_a3d86b956f8722735b1d7e791dea703bc}} 
+\index{Drone@{Drone}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Drone\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to get the current position of the drone entity on the map. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classVector3}{Vector3}} value of the current potion of the drone entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a9bc32587aab91761fc0e718612498199}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a33d05f853306e480ab97049eb6408ef7}\label{classDrone_a33d05f853306e480ab97049eb6408ef7}} 
+\index{Drone@{Drone}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function used to get the current speed of the drone entity. 
+
+\begin{DoxyReturn}{Returns}
+A float value of the current speed of the drone entity. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a91bc6556b0447c8f92b2e173e6155838}\label{classDrone_a91bc6556b0447c8f92b2e173e6155838}} 
+\index{Drone@{Drone}!GetXP@{GetXP}}
+\index{GetXP@{GetXP}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetXP()}{GetXP()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gets the Xp of the drone. 
+
+\begin{DoxyReturn}{Returns}
+returns the xp. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a97bdb29840aeb88de5fdacf2ef91037a}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a1559fe24a5792ac72ba9d8a4a13a9ec8}\label{classDrone_a1559fe24a5792ac72ba9d8a4a13a9ec8}} 
+\index{Drone@{Drone}!Jump@{Jump}}
+\index{Jump@{Jump}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Jump()}{Jump()}}
+{\footnotesize\ttfamily void Drone\+::\+Jump (\begin{DoxyParamCaption}\item[{double}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to make the drone entity jump. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & A double value storing the height the drone\textquotesingle{}s jump. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a4e8eb64a324e1196be039c5e2a293b7a}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a2226fed35df96c5a802a0c4f44cc2354}\label{classDrone_a2226fed35df96c5a802a0c4f44cc2354}} 
+\index{Drone@{Drone}!operator=@{operator=}}
+\index{operator=@{operator=}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDrone}{Drone}}\& Drone\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDrone}{Drone}} \&}]{drone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+An override of the = operator; Being deleted so the drone cannot be copied. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drone} & The drone that would have been copied had the function not been deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrone_a0e58e47f7e48f45def8ba3297c46d9be}\label{classDrone_a0e58e47f7e48f45def8ba3297c46d9be}} 
+\index{Drone@{Drone}!RefundXP@{RefundXP}}
+\index{RefundXP@{RefundXP}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{RefundXP()}{RefundXP()}}
+{\footnotesize\ttfamily float Drone\+::\+Refund\+XP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Refunds all spent XP when the upgrades are reset. 
+
+\begin{DoxyReturn}{Returns}
+The XP after the calculated refund. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a704568ce7a31b030ba4895a9f8363caf}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_ad698b0fac61fecdd01dffea6762a3710}\label{classDrone_ad698b0fac61fecdd01dffea6762a3710}} 
+\index{Drone@{Drone}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Drone\+::\+Rotate (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to rotate the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & A double variable used in the calculation of the rotation. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a4c109baa4179c28422623a7d3b2e9f82}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a779efec4ba4b8b90635656c0a4c313f9}\label{classDrone_a779efec4ba4b8b90635656c0a4c313f9}} 
+\index{Drone@{Drone}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void Drone\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{std\+::string}]{col\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Sets the color of the drone in a C\+SS style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col\+\_\+} & The new color the drone will be set to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a61b62fe1126f473d8ebb524c70c57a39}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a2dfb158a784d354d13740a40151fb312}\label{classDrone_a2dfb158a784d354d13740a40151fb312}} 
+\index{Drone@{Drone}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily void Drone\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the new destination for the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new destination of the drone entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa473000823f673e9d7b89aed3cd3fc5c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a165e0cfa18527eaef136ac60524199bd}\label{classDrone_a165e0cfa18527eaef136ac60524199bd}} 
+\index{Drone@{Drone}!SetDetails@{SetDetails}}
+\index{SetDetails@{SetDetails}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetDetails()}{SetDetails()}}
+{\footnotesize\ttfamily void Drone\+::\+Set\+Details (\begin{DoxyParamCaption}\item[{Json\+Object}]{dets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the details of the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dets} & A Json\+Object\& variable storing the new details of the drone entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIEntity_afe061c99bab3160771f64e51218f12d1}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a102651f93957b1dbe8199cbd30a9e26f}\label{classDrone_a102651f93957b1dbe8199cbd30a9e26f}} 
+\index{Drone@{Drone}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void Drone\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the direction of the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new direction of the drone entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a64bfaa448a929ca71693ff3e2edb9d97}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a00150938e8dbfceaf81c9fb59994f6ef}\label{classDrone_a00150938e8dbfceaf81c9fb59994f6ef}} 
+\index{Drone@{Drone}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Drone\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used to set the new positon of the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+} & A \mbox{\hyperlink{classVector3}{Vector3}} variable storing the new position for the drone entity. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_af0475048b09dc13ed6cf8e7c7be2ae6b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a91aaa585d33dfe866769005aff3fdf60}\label{classDrone_a91aaa585d33dfe866769005aff3fdf60}} 
+\index{Drone@{Drone}!SetSpeed@{SetSpeed}}
+\index{SetSpeed@{SetSpeed}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SetSpeed()}{SetSpeed()}}
+{\footnotesize\ttfamily float Drone\+::\+Set\+Speed (\begin{DoxyParamCaption}\item[{float}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A function used to set the speed of the drone entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & A float value containing the new speed that the drone will be set to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A float value of the speed that the drone was set to. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity_aac0c09bd12eea8a8d3088d8c67e8db4b}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a6798b0bd297ca7a930016cd2dda0b7ff}\label{classDrone_a6798b0bd297ca7a930016cd2dda0b7ff}} 
+\index{Drone@{Drone}!Update@{Update}}
+\index{Update@{Update}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Drone\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the drone\textquotesingle{}s current position by first beelining to the robot, then using the movement pattern determined in the \mbox{\hyperlink{classDrone_a21d9dc799ee8a6c10b579fcab401bd57}{Get\+Nearest\+Entity()}} function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Stands for \char`\"{}delta time\char`\"{}; A double variable used in the calculation of the drone\textquotesingle{}s next position. \\
+\hline
+{\em scheduler} & An I\+Entity$\ast$ vector storing all robots currently in the simulation. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_a9a8e8588fd85c7b0d813d60686d4dc2c}{I\+Entity}}.
+
+\mbox{\Hypertarget{classDrone_a3871e3b514181daa0500fabe0c88b745}\label{classDrone_a3871e3b514181daa0500fabe0c88b745}} 
+\index{Drone@{Drone}!UpgradeAdded@{UpgradeAdded}}
+\index{UpgradeAdded@{UpgradeAdded}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{UpgradeAdded()}{UpgradeAdded()}}
+{\footnotesize\ttfamily float Drone\+::\+Upgrade\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Decrements the xp by the goal amount after goal is reached. 
+
+\begin{DoxyReturn}{Returns}
+gives back the xp subtracted from the goal. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity_aa87c18498935e838012a271d0cb2f3d1}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Drone.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Drone.\+cc\end{DoxyCompactItemize}

@@ -5,7 +5,8 @@
  ../../libs/routing/include/graph.h \
  ../../libs/routing/include/distance_function.h \
  ../../libs/routing/include/bounding_box.h include/IEntity.h \
- include/util/json.h ../../dependencies/include/WebServer.h \
+ include/../../routing/include/graph.h include/util/json.h \
+ ../../dependencies/include/WebServer.h \
  ../../dependencies/include/libwebsockets.h \
  ../../dependencies/include/lws_config.h \
  ../../dependencies/include/libwebsockets/lws-logs.h \
@@ -87,10 +88,11 @@
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
  ../../dependencies/include/picojson.h \
+ include/util/../../../util/include/xutil.h include/IUpgradeable.h \
  ../../libs/routing/include/routing/astar.h \
  ../../libs/routing/include/routing_strategy.h \
  ../../libs/routing/include/routing_api.h \
- ../../libs/routing/include/graph_factory.h
+ ../../libs/routing/include/graph_factory.h include/Car.h
 
 include/AstarStrategy.h:
 
@@ -109,6 +111,8 @@ include/IStrategy.h:
 ../../libs/routing/include/bounding_box.h:
 
 include/IEntity.h:
+
+include/../../routing/include/graph.h:
 
 include/util/json.h:
 
@@ -276,6 +280,10 @@ include/util/json.h:
 
 ../../dependencies/include/picojson.h:
 
+include/util/../../../util/include/xutil.h:
+
+include/IUpgradeable.h:
+
 ../../libs/routing/include/routing/astar.h:
 
 ../../libs/routing/include/routing_strategy.h:
@@ -283,3 +291,5 @@ include/util/json.h:
 ../../libs/routing/include/routing_api.h:
 
 ../../libs/routing/include/graph_factory.h:
+
+include/Car.h:

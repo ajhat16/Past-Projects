@@ -3,7 +3,6 @@
 bool JumpDecorator::IsCompleted() {
   return this->CelebrationDecorator::IsCompleted();
 }
-
 void JumpDecorator::Move(IEntity* entity, double dt) {
   if (strategy->IsCompleted() && !IsCompleted()) {
     time = time + dt;

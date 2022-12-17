@@ -82,13 +82,15 @@
  ../../dependencies/include/libwebsockets/lws-settings.h \
  ../../dependencies/include/libwebsockets/lws-netdev.h \
  ../../dependencies/include/picojson.h \
- ../../dependencies/include/picojson.h include/IEntity.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/routing_strategy.h \
- ../../libs/routing/include/graph.h \
- ../../libs/routing/include/distance_function.h \
- ../../libs/routing/include/bounding_box.h include/math/vector3.h \
- include/Drone.h include/IStrategy.h include/IEntity.h
+ ../../dependencies/include/picojson.h \
+ include/util/../../../util/include/xutil.h include/IEntity.h \
+ include/../../routing/include/graph.h \
+ include/../../routing/include/routing_strategy.h \
+ include/../../routing/include/graph.h \
+ include/../../routing/include/distance_function.h \
+ include/../../routing/include/bounding_box.h include/math/vector3.h \
+ include/IUpgradeable.h include/Drone.h include/IStrategy.h \
+ ../../libs/routing/include/graph.h include/IEntity.h
 
 include/CompositeFactory.h:
 
@@ -260,22 +262,28 @@ include/util/json.h:
 
 ../../dependencies/include/picojson.h:
 
+include/util/../../../util/include/xutil.h:
+
 include/IEntity.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/routing_strategy.h:
+include/../../routing/include/routing_strategy.h:
 
-../../libs/routing/include/graph.h:
+include/../../routing/include/graph.h:
 
-../../libs/routing/include/distance_function.h:
+include/../../routing/include/distance_function.h:
 
-../../libs/routing/include/bounding_box.h:
+include/../../routing/include/bounding_box.h:
 
 include/math/vector3.h:
+
+include/IUpgradeable.h:
 
 include/Drone.h:
 
 include/IStrategy.h:
+
+../../libs/routing/include/graph.h:
 
 include/IEntity.h:

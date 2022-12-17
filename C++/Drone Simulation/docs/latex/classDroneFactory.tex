@@ -1,0 +1,73 @@
+\hypertarget{classDroneFactory}{}\doxysection{Drone\+Factory Class Reference}
+\label{classDroneFactory}\index{DroneFactory@{DroneFactory}}
+
+
+Inherits from the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} class and is used in correspondence with the \mbox{\hyperlink{classCompositeFactory}{Composite\+Factory}} class to create drone entities.  
+
+
+
+
+{\ttfamily \#include $<$Drone\+Factory.\+h$>$}
+
+
+
+Inheritance diagram for Drone\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classDroneFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drone\+Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classDroneFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDroneFactory_a757949d7b86a82ad884e3c281e16cbd5}\label{classDroneFactory_a757949d7b86a82ad884e3c281e16cbd5}} 
+virtual \mbox{\hyperlink{classDroneFactory_a757949d7b86a82ad884e3c281e16cbd5}{$\sim$\+Drone\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDroneFactory}{Drone\+Factory}} class; automatically deletes any allocated variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classDroneFactory_a00b79f8eb94217a494954de37b4d9a29}{Create\+Entity}} (const Json\+Object \&entity)
+\begin{DoxyCompactList}\small\item\em Used to create drone entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Inherits from the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} class and is used in correspondence with the \mbox{\hyperlink{classCompositeFactory}{Composite\+Factory}} class to create drone entities. 
+
+include 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDroneFactory_a00b79f8eb94217a494954de37b4d9a29}\label{classDroneFactory_a00b79f8eb94217a494954de37b4d9a29}} 
+\index{DroneFactory@{DroneFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!DroneFactory@{DroneFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ Drone\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{const Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used to create drone entities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & A Json\+Object\& storing the details of the drone entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An I\+Entity$\ast$ of the newly created drone. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntityFactory_ab28e669d7f78ce426620fa4e472f3adb}{I\+Entity\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/include/Drone\+Factory.\+h\item 
+/home/hatou003/csci-\/3081w-\/f22/\+Team-\/010-\/38-\/homework04/libs/transit/src/Drone\+Factory.\+cc\end{DoxyCompactItemize}
