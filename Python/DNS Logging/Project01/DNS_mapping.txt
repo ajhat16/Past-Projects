@@ -1,0 +1,4 @@
+www.google.com,142.250.191.164
+www.youtube.com,172.217.4.206
+www.umn.edu,134.84.223.68
+www.cnn.com,151.101.151.5

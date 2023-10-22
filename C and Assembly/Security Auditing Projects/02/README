@@ -1,0 +1,1 @@
+NOTE: bcimgview.c was not written by me, it was written by my professor for students to audit for security vulnerabilities (4 vulnerabilities present). The attacks for the vulnerabilities are written by me and are saved in the attacks-1..4 files. Additionally, we had to fix the vulnerabilities and write a patch file for it, as well as update the original code (bcimgview-new.c).
